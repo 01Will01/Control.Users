@@ -1,0 +1,117 @@
+<div class="body-userDetails">
+    <div *ngIf="statusLoading">
+        <div id="screen-protect" *ngIf="statusLoading"></div>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <div class="show-action" *ngIf="statusConfirmAction">
+        <div id="screen-protect-action"></div>
+        <div class="confirm-action">
+            <div id="mesage-action">
+                {{messageAction}}
+            </div>
+            <div id="buttons-confirm-action">
+                <a (click)="getValueAction(true)" id="buttons-action"> Sim </a>
+                <a (click)="getValueAction(false)" id="buttons-action"> Não </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-userDetails">
+
+        <div class="navbar">
+
+            <a [routerLink]="['/home/usersAll']" title="Lista de usuários"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" ></i></a>
+
+            <a [routerLink]="['/home/register']" title="Cadastrar" (click)="openRegister()"><i  class="fa fa-plus fa-2x" aria-hidden="true"></i></a>
+
+        </div>
+
+        <div class="contents">
+
+            <div class="message-success" *ngIf="statusSuccess">
+                {{messageSuccess}}
+            </div>
+
+            <div class="input" *ngIf="statusShowInput">
+
+                <h4> Detalhes </h4>
+
+                <div class="buttons-confirm-action">
+                    <a [matMenuTriggerFor]="controlDetails" title="Opção"><i style="animation: pulse-blue 2s infinite; border-radius: 20vw; margin: 1vh;;" id="buttons-action" class="fa fa-paint-brush fa-2x"></i></a>
+
+                    <mat-menu #controlDetails="matMenu">
+                        <a mat-menu-item title="Remover" (click)=delete()><span> Remover</span></a>
+
+                        <a mat-menu-item [routerLink]="['/home/update']" title="Editar"><span> Editar</span></a>
+                    </mat-menu>
+                </div>
+
+                <div class="details">
+                    <div class="data" id="style-1">
+
+                        <div data-columns="1">
+                            <div>
+                                <label>Nome:</label>
+                                <p>{{dataUser.name}} {{dataUser.lastname}}</p>
+                            </div>
+                        </div>
+
+                        <div data-columns="3">
+                            <div>
+                                <label>Telefone (móvel):</label>
+                                <p>{{dataUser.phone}}</p>
+                            </div>
+                            <div>
+                                <label>Telefone (residêncial):</label>
+                                <p>{{dataUser.telephone}}</p>
+                            </div>
+                            <div>
+                                <label>E-mail:</label>
+                                <p>{{dataUser.email}}</p>
+                            </div>
+                        </div>
+
+                        <div data-columns="4">
+                            <div>
+                                <label>CPF:</label>
+                                <p>{{dataUser.telephone}}</p>
+                            </div>
+                            <div>
+                                <label>RG:</label>
+                                <p>{{dataUser.telephone}}</p>
+                            </div>
+                            <div>
+                                <label>Data de nascimento:</label>
+                                <span>{{dataUser.birthDate}}</span>
+                            </div>
+                            <div>
+                                <label>Senha:</label>
+                                <p>{{dataUser.password}}</p>
+                            </div>
+                        </div>
+
+                        <div data-columns="4">
+                            <div>
+                                <label>Endereço:</label>
+                                <p>{{dataUser.address}}, {{dataUser.number}} - {{dataUser.district}}</p>
+                            </div>
+                            <div>
+                                <label>Complemento</label>
+                                <p>{{dataUser.complement}}</p>
+                            </div>
+                            <div>
+                                <label>CEP:</label>
+                                <p>{{dataUser.cep}}</p>
+                            </div>
+                            <div>
+                                <label>Cidade & Estado:</label>
+                                <p>{{dataUser.city}} - {{dataUser.uf}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

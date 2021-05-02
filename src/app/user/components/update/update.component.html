@@ -1,0 +1,185 @@
+<div class="body-userAll">
+    <div *ngIf="statusLoading">
+        <div id="screen-protect" *ngIf="statusLoading"></div>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+
+    <div class="container-userAll">
+
+        <div class="navbar">
+
+            <a title="Lista de usuários" [routerLink]="['/home/usersAll']"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" ></i></a>
+
+            <a [routerLink]="['/home/register']" title="Cadastrar"><i  class="fa fa-plus fa-2x" aria-hidden="true"></i></a>
+
+        </div>
+
+        <div class="contents">
+
+            <div class="message-success" *ngIf="statusSuccess">
+                {{messageSuccess}}
+            </div>
+
+            <div class="change" *ngIf="statusShowChange">
+
+                <h4> Editar</h4>
+
+                <div class="update">
+                    <form [formGroup]="formChange" style="width: 100%; height: 100%;">
+                        <div class="form-group" id="input-register">
+                            <mat-horizontal-stepper #stepper style="border-radius: 1vw;">
+                                <mat-step [stepControl]="formChange">
+                                    <ng-template matStepLabel>Como você se chama</ng-template>
+                                    <div class="group-step">
+                                        <div class="step">
+                                            <mat-label>Name</mat-label>
+                                            <input matInput placeholder="Ex. Primeiro nomes" formControlName="Name" value="Nome teste" required>
+                                            <span class="required" *ngIf="!formChange.controls.Name.valid">Campo Obrigatório</span>
+
+                                        </div>
+                                        <div class="step">
+                                            <mat-label>Sobrenome</mat-label>
+                                            <input matInput placeholder="Ex. Sobrenome" formControlName="Lastname" required>
+                                            <span class="required" *ngIf="!formChange.controls.Lastname.valid ">Campo Obrigatório</span>
+
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button mat-button matStepperNext>Pronto</button>
+                                    </div>
+                                </mat-step>
+
+                                <mat-step [stepControl]="formChange">
+                                    <ng-template matStepLabel>Sua identidade</ng-template>
+
+                                    <div class="group-step">
+                                        <div class="step">
+                                            <mat-label>CPF</mat-label>
+                                            <input type="text" mask="000.000.000-00" matInput placeholder="Ex. 000.000.000-00" formControlName="CPF" required>
+                                            <span class="required" *ngIf="!formChange.controls.CPF.valid ">Campo Obrigatório</span>
+
+                                        </div>
+                                        <div class="step">
+                                            <mat-label>RG</mat-label>
+                                            <input type="text" mask="00.000.000-00" matInput placeholder="Ex. 00.000.000-0" formControlName="RG" required>
+                                            <span class="required" *ngIf="!formChange.controls.RG.valid">Campo Obrigatório</span>
+                                        </div>
+
+                                        <div class="step">
+                                            <mat-label>Data de nascimento</mat-label>
+                                            <mat-label>{{this.viewBirthDate}}</mat-label>
+                                            <input type="hidden" matInput [matDatepicker]="dp" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+                                            <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                                            <mat-datepicker #dp></mat-datepicker>
+                                            <span class="required" *ngIf="!formChange.controls.BirthDate.valid">Campo Obrigatório</span>
+                                        </div>
+                                        <div class="step">
+                                            <mat-label>Senha</mat-label>
+                                            <input type="password" matInput placeholder="Ex. ******" formControlName="Password" required>
+                                            <span class="required" *ngIf="!formChange.controls.Password.valid">Campo Obrigatório</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button mat-button matStepperNext>Pronto</button>
+                                    </div>
+                                </mat-step>
+
+                                <mat-step [stepControl]="formChange">
+                                    <ng-template matStepLabel>Seu contato</ng-template>
+                                    <div class="group-step">
+                                        <div class="step">
+                                            <mat-label>Número de telefone móvel</mat-label>
+                                            <input type="text" prefix="+55" mask="(00) 00000-0000" matInput placeholder="Ex. +55 (00) 99999-9999" formControlName="Phone" required>
+                                            <span class="required" *ngIf="!formChange.controls.Phone.valid">Campo Obrigatório</span>
+                                        </div>
+                                        <div class="step">
+                                            <mat-label>Número de telefone residencial</mat-label>
+                                            <input type="text" prefix="+55" mask="(00) 0000-0000" matInput placeholder="Ex. +55 (00) 9999-9999" formControlName="Telephone" required>
+                                            <span class="required" *ngIf="!formChange.controls.Telephone.valid">Campo Obrigatório</span>
+                                        </div>
+
+                                        <div class="step">
+                                            <mat-label>E-mail</mat-label>
+                                            <input type="text" matInput placeholder="Ex. Nome@Dominio.com.br" formControlName="Email" required>
+                                            <span class="required" *ngIf="!formChange.controls.Email.valid">Campo Obrigatório</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button mat-button matStepperNext>Pronto</button>
+                                    </div>
+                                </mat-step>
+
+                                <mat-step [stepControl]="formChange">
+                                    <ng-template matStepLabel>Localidade residencial</ng-template>
+                                    <div class="group-step">
+                                        <div class="step">
+                                            <mat-label>Nome da rua</mat-label>
+                                            <input matInput placeholder="Ex. Rua nome..." formControlName="Address" required>
+                                            <span class="required" *ngIf="!formChange.controls.Address.valid">Campo Obrigatório</span>
+                                        </div>
+                                        <div class="step">
+                                            <mat-label>Número do logradouro</mat-label>
+                                            <input type="number" maxlength="4" min="0" max="9999" matInput placeholder="Ex. 1045" formControlName="Number" required>
+                                            <span class="required" *ngIf="!formChange.controls.Number.valid">Campo Obrigatório</span>
+                                        </div>
+
+                                        <div class="step">
+                                            <mat-label>Complemento</mat-label>
+                                            <input matInput placeholder="Ex. Apto 120" formControlName="Complement" required>
+                                            <span class="required" *ngIf="!formChange.controls.Complement.valid">Campo Obrigatório</span>
+                                        </div>
+
+
+                                        <div class="step">
+                                            <mat-label>CEP</mat-label>
+                                            <input type="text" mask="00000-000" matInput placeholder="Ex. 00000-000" formControlName="CEP" required>
+                                            <span class="required" *ngIf="!formChange.controls.CEP.valid">Campo Obrigatório</span>
+                                        </div>
+                                        <div class="step">
+                                            <mat-label>Bairro</mat-label>
+                                            <input matInput placeholder="Ex. Nome" formControlName="District" required>
+                                            <span class="required" *ngIf="!formChange.controls.District.valid">Campo Obrigatório</span>
+                                        </div>
+                                        <div class="step">
+                                            <mat-label>Cidade</mat-label>
+                                            <input matInput placeholder="Ex. Nome" formControlName="City" required>
+                                            <span class="required" *ngIf="!formChange.controls.City.valid">Campo Obrigatório</span>
+                                        </div>
+
+                                        <div class="step">
+                                            <mat-label>Estado</mat-label>
+                                            <input matInput placeholder="Ex. Nome" formControlName="UF" required>
+                                            <span class="required" *ngIf="!formChange.controls.UF.valid">Campo Obrigatório</span>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <button mat-button matStepperNext>Pronto</button>
+                                    </div>
+                                </mat-step>
+
+
+                                <mat-step>
+                                    <ng-template matStepLabel>Conclusão</ng-template>
+                                    <p>Caso já tenha confirmado os dados, apenas concluir o cadastro!</p>
+                                    <div>
+                                        <div id="action-register">
+                                            <button mat-button matStepperPrevious>Voltar</button>
+                                            <button mat-button (click)="stepper.reset()">Limpar</button>
+                                            <button type="submit" (click)="inputChange()"> <a id="save-register" title="Salvar"><i type="submit" class="fa fa-floppy-o fa-2x" aria-hidden="true"></i></a></button>
+                                        </div>
+                                    </div>
+                                </mat-step>
+                            </mat-horizontal-stepper>
+                        </div>
+                        <span class="required" *ngIf="statusMessage">
+                            <div *ngFor="let message of messages">
+                                {{ message }}
+                            </div>
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

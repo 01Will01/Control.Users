@@ -1,0 +1,32 @@
+<mat-sidenav-container class="navigation-container">
+  <mat-sidenav #drawer mode="side" opened role="navigation">
+    <mat-nav-list>
+      <a href="https://milvus.com.br/" target="_blank" class="title-nav">
+        <img width="200" src="./../../assets/brand/MV_logo_padrao.svg">
+        <span class="subtitle-nav">Teste Admissional Milvus</span>
+      </a>
+      <a #dashboard mat-list-item [routerLink]="['/main/dashboard']" (click)="setPage('/main/dashboard')">
+        <i class="material-icons">assignment</i>
+        <span class="nav-item-text">Instruções</span>
+      </a>
+      <a #api mat-list-item [routerLink]="['/main/api-e-exemplos']" (click)="setPage('/main/api-e-exemplos')">
+        <i class="material-icons">link</i>
+        <span class="nav-item-text">API e Exemplos</span>
+      </a>
+      <div class="text-center" style="position: absolute; bottom: 10px;">
+        <span style="font-size: 11px;">®2021 Milvus Monitoramento Inteligente</span>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="text-right user-options">
+      <div style="display: flex; align-items: center;">
+        <i class="material-icons" style="margin-right: 10px;">account_circle</i>
+        <span style="margin-right: 10px; cursor: pointer;" (click)="dropdownVisible = !dropdownVisible">Teste Milvus</span>
+      </div>
+    </div>
+    <div class="screens-card">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

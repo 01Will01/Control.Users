@@ -1,0 +1,49 @@
+<div class="container-home">
+    <!-- header area start -->
+    <header *ngIf="viewHeader">
+        <div class="left-area">
+            <h3><span>Milvus</span> Users Access</h3>
+
+            <label for="check"> <i class="fa fa-bars" id="sidebar_btn"></i> </label>
+        </div>
+
+        <div class="right-area">
+            <a (click)="exit()" class="logout_btn">Sair</a>
+        </div>
+    </header>
+    <!-- header area end -->
+
+
+    <div class="contects-home">
+        <input type="checkbox" id="check" (click)="(checkControlView())">
+
+        <!-- sidebar start -->
+        <div class="sidebar" id="style-sidebar">
+            <input type="checkbox" id="check" (click)="(checkControlView())">
+            <div id="center">
+            </div>
+
+            <label for="check" *ngIf="!viewHeader"> <i class="fa fa-bars" id="sidebar-internal"></i> </label>
+
+            <a [routerLink]="['/home/dashboard']" title="Dashboard"><i class="fa fa-desktop"></i><span>Dashboard</span></a>
+
+            <a [matMenuTriggerFor]="controlData" title="Controle de dados"><i class="fa fa-users"></i><span>Controle dos dados</span></a>
+
+            <mat-menu #controlData="matMenu">
+                <a mat-menu-item [routerLink]="['/home/usersAll']" title="Usuários"><i class="fa fa-pencil-square"></i><span> Usuários</span></a>
+            </mat-menu>
+
+            <div class="right-area-sidebar">
+                <a (click)="exit()" class="logout-sidebar">Sair</a>
+            </div>
+        </div>
+
+        <!-- sidebar end -->
+
+        <div class="content">
+            <div class="componentAction">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

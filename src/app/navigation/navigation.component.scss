@@ -1,0 +1,95 @@
+.navigation-container {
+    height: 100vh;
+}
+
+.title-nav {
+  display: grid;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.subtitle-nav {
+  font-family: sans-serif;
+  font-size: 18px;
+  color: #0e2338;
+}
+
+.screens-card {
+    width: 84vw;
+    margin: 14px 0px 13px 40px;
+}
+
+.user-options {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 40px;
+    background-color: rgb(42, 184, 84);
+    height: 80px;
+}
+
+.dropdown-user {
+    position: absolute;
+    right: 34px;
+    z-index: 999;
+    background-color: white;
+    box-shadow: 0px 3px 20px #00000008;
+    border-radius: 4px;
+    width: 114px;
+    text-align: center;
+    transition: all 300ms ease-in-out;
+}
+
+.list-user {
+    list-style: none;
+    padding: 0;
+}
+
+.list-user > li {
+    padding: 7px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.list-user > li:hover {
+    background-color: lightblue;
+}
+
+.drop-opened-carret {
+    transform: rotate(180deg);
+    transition: all 300ms ease-in-out;
+}
+
+.mat-sidenav {
+    width: 220px;
+    box-shadow: -1px -1px 17px -10px rgba(0, 0, 0, 0.75);
+}
+
+.mat-list-base {
+  padding: 8px;
+}
+
+.mat-list-item {
+    transition: all 200ms ease-in-out;
+    border-radius: 4px;
+
+    &:hover:not(.actual-page) {
+        background-color: rgb(170, 238, 190) !important;
+    }
+}
+
+.nav-item-text {
+    margin-left: 30px;
+}
+
+.actual-page {
+    background-color: rgb(42, 184, 84) !important;
+}
+
+
+@media screen and (max-width: 1366px) {
+    .screens-card {
+        width: 77.9vw;
+    }
+}

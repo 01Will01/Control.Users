@@ -1,0 +1,108 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Introdução</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <span>Bem-vindo ao teste técnico do processo seletivo Milvus!</span>
+  </div>
+  <div class="col-md-12">
+    <span>Neste teste, será avaliado sua competência técnica em Angular+, onde será considerado tanto seu conhecimento do framework e seus componentes,
+      como sua organização e lógica.
+    </span>
+  </div>
+  <div class="col-md-12">
+    <span>O teste não é longo, mas é bem detalhado. Preste atenção nas regras, mas faça com calma! O que será avaliado é sua experiência e comportamento com a tecnologia, e não a conclusão do teste.</span>
+  </div>
+  <div class="col-md-12">
+    <span>Faça com a sua personalidade e visão organizacional, tanto das telas quanto dos arquivos, queremos saber como você pensaria e se organizaria em uma tarefa do nosso cotidiano.</span>
+  </div>
+</div>
+<div class="row" style="margin-top: 20px;">
+  <div class="col-md-12">
+    <h1>Requisitos</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <span>Você terá 2 (duas) horas para realizar o seguinte cronograma:</span>
+    <ul>
+      <li>
+        <span>Criar 4 (quatro) componentes (Use o Angular CLI para criar mais rapidamente) dentro da pasta <b>app/user</b> (nesta pasta já há um submódulo importado no módulo principal da aplicação, importe os componentes neste submódulo que eles já serão importados no módulo principal), sendo eles:</span>
+      </li>
+      <li>
+        <span><b>Uma tela de listagem de usuários:</b></span>
+        <br>
+        <span style="margin-left: 20px;">Nesta tela, você apresentará uma tabela com a lista de usuários cadastrados no sistema, com seus principais atributos (CPF, Nome, E-mail, Status, e mais duas colunas à sua escolha) e uma última coluna com um botão de opções, faça um dropdown com a opção de <b>Editar</b> e <b>Excluir</b>, além de uma linha abaixo para os filtros, veja na parte de API quais os filtros habilitados. Acima da tabela, apresente um botão de <b>Adicionar</b>, para cadastrar um novo usuário.</span>
+      </li>
+      <li>
+        <span><b>Uma tela de detalhes do usuário:</b></span>
+        <br>
+        <span style="margin-left: 20px;">Esta tela será redirecionada à partir do <b>clique</b> do usuário na linha da tabela referente ao usuário a ser mostrado da listagem de usuários.</span>
+        <br>
+        <span style="margin-left: 20px;">Nesta tela você apresentará todos os dados do usuário, mas lembre-se que deverá ser apenas para amostragem dos dados. Organize da forma que achar melhor. Além disso, faça um botão para voltar para a tela de listagem, e um botão de opções de <b>Edição</b> e <b>Exclusão</b>. Posicione estes botões da forma que achar melhor (isso será avaliado).</span>
+      </li>
+      <li>
+        <span><b>Uma tela de edição do usuário:</b></span>
+        <br>
+        <span style="margin-left: 20px;">Nesta tela, apresente os mesmos dados apresentados na tela de detalhamento do usuário, mas com a possibilidade do mesmo editar qualquer campo que ele deseja. Faça um botão de <b>Cancelar Edição</b>, retornando o usuário para a tela de listagem, e um botão de <b>Salvar</b>.</span>
+      </li>
+      <li>
+        <span><b>Uma tela de cadastro do usuário:</b></span>
+        <br>
+        <span style="margin-left: 20px;">Nesta tela, apresente os mesmos campos necessários para o cadastro do usuário como no exemplo retornado pela API. Você pode organizar os campos da mesma forma da tela de edição, facilitando seu desenvolvimento. Apresente novamente um botão de <b>Cancelar Cadastro</b>, retornando o usuário para a tela de listagem, e um botão de <b>Salvar</b>.</span>
+      </li>
+      <li>
+        <span>Crie um novo link dentro da sidenav, abaixo do item <b>API e Exemplos</b>, que redirecione o usuário para a listagem.</span>
+      </li>
+      <li>
+        <span>Use o arquivo <b>app/app-routing.module.ts</b> para criar as rotas da sua aplicação.</span>
+      </li>
+      <li>
+        <span>Crie dentro da pasta <b>app/services</b>, uma Service com todas as requisições relacionados ao usuário para a API, e chame em cada um dos componentes conforme necessidade.</span>
+      </li>
+      <li>
+        <span>Confira na página de <b>API e Exemplos</b>, os endereços da API que você irá usar, e também alguns exemplos para referência.</span>
+      </li>
+      <li>
+        <span>A feitura de cada um dos itens exatamente como especificado conta positivamente para a avaliação!</span>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <span>Neste projeto, já vem instalado o <b>Angular Material</b>, use ele para facilitar seu desenvolvimento, como por exemplo suas tabelas, formulários, botões, ícones, entre outros componentes que deseja usar. A importação do <b>Angualar Material</b> é feita através do arquivo <b>app/shared/material.module.ts</b>, ele já possui alguns componentes importados e já é instanciado como <b>CustomMaterialModule</b>, nos arquivos <b>app/app.module.ts</b> e <b>app/user/user.module.ts</b>. Se desejar usar outro componente que não esteja importado neste arquivo, vá até o <a href="https://material.angular.io/components/categories" target="_blank"><b>Site Oficial</b></a> e veja como usar o componente que deseja (ele também pode ser usado como guia para uso dos componentes já importados).</span>
+  </div>
+</div>
+<div class="row" style="margin-top: 10px;">
+  <div class="col-md-12">
+    <span>Também está instalado no projeto o <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/" target="_blank"><b>Bootstrap 4</b></a>, use como quiser.</span>
+  </div>
+</div>
+<div class="row" style="margin-top: 10px;">
+  <div class="col-md-12">
+    <span>Além disso, o projeto também inclui o <a href="https://www.npmjs.com/package/ngx-mask" target="_blank"><b>NGX Mask</b></a> e <a href="https://www.npmjs.com/package/ngx-toastr" target="_blank"><b>NGX Toastr</b></a>. Se houver tempo, use máscaras nos campos do usuário que necessitem delas, como por exemplo o campo CNPJ. E renderize notificações de sucesso ou erro nas ações de salvar e excluir para o usuário. Os links podem ser usados como guia de uso das ferramentas.</span>
+  </div>
+</div>
+<div class="row" style="margin-top: 10px;">
+  <div class="col-md-12">
+    <span>O <a href="https://www.typescriptlang.org/" target="_blank"><b>Typescript</b></a> deste projeto segue as regras do <a href="https://262.ecma-international.org/8.0/" target="_blank"><b>ES2017</b></a>, e o estilo é feito por meio do <a href="https://sass-lang.com/" target="_blank"><b>SASS</b></a>.</span>
+  </div>
+</div>
+<div class="row" style="margin-top: 10px;">
+  <div class="col-md-12">
+    <span>A organização do <b>Typescript</b>, bem como do estilo empregados no código será de suma importância na avaliação, fique atento!</span>
+  </div>
+</div>
+<div class="row" style="margin-top: 10px;">
+  <div class="col-md-12">
+    <span>Não esqueça de disponibilizar seu código para nós! Suba o projeto por qualquer repositório de sua preferência e nos envie o link quando finalizar o teste, iremos avaliá-lo.</span>
+  </div>
+</div>
+<div class="row" style="margin-top: 10px; margin-bottom: 40px;">
+  <div class="col-md-12">
+    <span>Boa sorte!</span>
+  </div>
+</div>
