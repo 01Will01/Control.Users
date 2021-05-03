@@ -98,8 +98,8 @@
                                         </div>
 
                                         <div class="step">
-                                            <mat-label>E-mail</mat-label>
-                                            <input type="text" matInput placeholder="Ex. Nome@Dominio.com.br" formControlName="Email" required>
+                                            <mat-label for="email">E-mail</mat-label>
+                                            <input type="email" name="email" [email]="true" matInput placeholder="Ex. Nome@Dominio.com.br" formControlName="Email" required>
                                             <span class="required" *ngIf="!formInput.controls.Email.valid && formInput.controls.Email.touched">☢ Campo Obrigatório</span>
                                         </div>
                                     </div>
