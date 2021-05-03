@@ -57,7 +57,6 @@ export class UserService {
       "cidade": city,
       "uf": uf
     }
-    console.log(json)
     return this.http.put(`${environment.apiUrl}/${id}`, json, this.options);
   }
 

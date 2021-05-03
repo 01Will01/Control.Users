@@ -138,7 +138,9 @@ export class RegisterComponent implements OnInit {
         ).subscribe(res => {
           if (this.validators(res)) {
             this.showMessageSucceess('Usuário cadastrado!');
-            this.router.navigateByUrl('/home/usersAll');
+            setTimeout(() => {
+              this.router.navigateByUrl('/home/usersAll');
+            }, 2000);
           } else { this.showMessageError(res); }
         });
     } else { this.showMessageError('Preencha os campos obrigatórios!'); }

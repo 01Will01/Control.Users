@@ -249,41 +249,27 @@ label #sidebar_btn:hover {
     display: none;
 }
 
-.content-crud {
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    display: flex;
-    flex-direction: row;
-    transition: 0.5s;
-}
-
 .content .componentAction {
     transition: 0.5s;
     width: 100%;
     height: 100%;
+    overflow: auto;
 }
 
-.content-crud .componentAction {
-    transition: 0.5s;
-    width: 100%;
-    height: 100%;
-}
-
-#style-crud::-webkit-scrollbar-track {
+#style-component::-webkit-scrollbar-track {
     cursor: pointer;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #FFFFFF;
 }
 
-#style-crud::-webkit-scrollbar {
+#style-component::-webkit-scrollbar {
     cursor: pointer;
     width: 5px;
     background-color: silver;
     border-radius: 10px;
 }
 
-#style-crud::-webkit-scrollbar-thumb {
+#style-component::-webkit-scrollbar-thumb {
     cursor: pointer;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: #22242a;

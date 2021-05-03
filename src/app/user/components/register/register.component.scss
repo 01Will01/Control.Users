@@ -112,9 +112,12 @@
 }
 
 .required {
-    font-size: 10pt;
-    color: red;
+    font-size: 11pt;
+    color: #fc750c;
+    font-weight: 500;
     text-align: center;
+    border-radius: 20vw;
+    animation: pulse-orange 2s infinite;
 }
 
 
@@ -314,14 +317,29 @@
 @keyframes pulse-blue {
     0% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgb(25 179 211 / 1);
+        box-shadow: 0 0 0 0 rgb(25 179 211 / 100%);
     }
     70% {
         transform: scale(1);
-        box-shadow: 0 0 0 1vh rgb(25 179 211/1%);
+        box-shadow: 0 0 0 1vh rgb(25 179 211/0%);
     }
     100% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgb(25 180 211 / 24%);
+        box-shadow: 0 0 0 0 rgb(25 180 211 / 0%);
+    }
+}
+
+@keyframes pulse-orange {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgb(252 117 12 / 34%);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 1vh rgb(252 117 12 / 0%);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgb(252 117 12 / 0%);
     }
 }

@@ -62,7 +62,7 @@ export class UpdateComponent implements OnInit {
   public messageSuccess: string;
 
   public formChange: FormGroup;
-  public viewBirthDate: string; 
+  public viewBirthDate: string;
   public dataUser: UserElements;
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
@@ -83,16 +83,11 @@ export class UpdateComponent implements OnInit {
     this.viewBirthDate = `${this.format(event.value._i.date)}/${this.format(month)}/${event.value._i.year}`;
   }
 
-  format(value: any) {
-    switch (String(value).length) {
-      case 1: return `0${value}`;
-      default: return value;
-    }
-  }
-
   change(row?: UserElements) {
     if (row != null || row != undefined) {
       sessionStorage.setItem('userDetails', JSON.stringify(row));
+
+      this.viewBirthDate = this.formatDate(row.birthDate);
 
       this.formChange.controls.ID.setValue(row.id);
       this.formChange.controls.CPF.setValue(row.cpf);
@@ -184,16 +179,56 @@ export class UpdateComponent implements OnInit {
         ).subscribe(res => {
           if (this.validators(res)) {
             this.showMessageSucceess('Usuário atualizado!');
-            this.router.navigateByUrl('/home/usersAll');
+            setTimeout(() => {
+              this.update()
+              this.router.navigateByUrl('/home/user');
+            }, 2000);
           } else { this.showMessageError(res); }
         });
-    } else { this.showMessageError('Preencha o campo obrigatório!'); }
+    } else { this.showMessageError('Preencha os campos obrigatórios!'); }
   }
 
 
   validators(data?: any) {
     if (data == null || data == undefined) { return true; }
     else { return false; }
+  }
+
+  format(value: any) {
+    switch (String(value).length) {
+      case 1: return `0${value}`;
+      default: return value;
+    }
+  }
+
+  formatDate(value: any) {
+    if (value.length >= 10) return `${value.substring(8, 10)}/${value.substring(5, 7)}/${value.substring(0, 4)}`;
+  }
+
+  update() {
+    let row: UserElements = {
+      id: this.formChange.controls.ID.value,
+      updatedAt: this.dataUser.updatedAt,
+      createdAt: this.dataUser.createdAt,
+      cpf: this.formChange.controls.CPF.value,
+      rg: this.formChange.controls.RG.value,
+      name: this.formChange.controls.Name.value,
+      lastname: this.formChange.controls.Lastname.value,
+      email: this.formChange.controls.Email.value,
+      password: this.formChange.controls.Password.value,
+      birthDate: this.formChange.controls.BirthDate.value,
+      telephone: this.formChange.controls.Telephone.value,
+      phone: this.formChange.controls.Phone.value,
+      active: true,
+      cep: this.formChange.controls.CEP.value,
+      address: this.formChange.controls.Address.value,
+      number: this.formChange.controls.Number.value,
+      complement: this.formChange.controls.Complement.value,
+      district: this.formChange.controls.District.value,
+      city: this.formChange.controls.City.value,
+      uf: this.formChange.controls.UF.value
+    }
+    sessionStorage.setItem('userDetails', JSON.stringify(row));
   }
 
 
@@ -227,8 +262,9 @@ export class UpdateComponent implements OnInit {
     });
   }
 
+
+
   checkLoading() {
     this.statusLoading = !this.statusLoading;
   }
 }
-

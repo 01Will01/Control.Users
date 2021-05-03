@@ -208,7 +208,16 @@ tr {
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2
+    background-color: #19b4d328
+}
+
+tr:hover {
+    background-color: #7dd4e6;
+    td {
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+    }
 }
 
 #style-1::-webkit-scrollbar-track {
@@ -274,3 +283,18 @@ tr:nth-child(even) {
 
 
 /* End TABLE */
+
+@keyframes pulse-blue {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgb(25 179 211 / 100%);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 1vh rgb(25 179 211/0%);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgb(25 180 211 / 0%);
+    }
+}

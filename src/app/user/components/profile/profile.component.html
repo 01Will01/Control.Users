@@ -23,7 +23,7 @@
 
             <a [routerLink]="['/home/usersAll']" title="Lista de usuários"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" ></i></a>
 
-            <a [routerLink]="['/home/register']" title="Cadastrar" (click)="openRegister()"><i  class="fa fa-plus fa-2x" aria-hidden="true"></i></a>
+            <a [routerLink]="['/home/register']" title="Cadastrar"><i  class="fa fa-plus fa-2x" aria-hidden="true"></i></a>
 
         </div>
 
@@ -33,12 +33,12 @@
                 {{messageSuccess}}
             </div>
 
-            <div class="input" *ngIf="statusShowInput">
+            <div class="input">
 
                 <h4> Detalhes </h4>
 
                 <div class="buttons-confirm-action">
-                    <a [matMenuTriggerFor]="controlDetails" title="Opção"><i style="animation: pulse-blue 2s infinite; border-radius: 20vw; margin: 1vh;;" id="buttons-action" class="fa fa-paint-brush fa-2x"></i></a>
+                    <a [matMenuTriggerFor]="controlDetails" title="Opções"><i id="paint" class="fa fa-paint-brush fa-2x"></i></a>
 
                     <mat-menu #controlDetails="matMenu">
                         <a mat-menu-item title="Remover" (click)=delete()><span> Remover</span></a>
@@ -60,11 +60,11 @@
                         <div data-columns="3">
                             <div>
                                 <label>Telefone (móvel):</label>
-                                <p>{{dataUser.phone}}</p>
+                                <p>{{dataUser.phone| mask: '(00) 00000-0000'}}</p>
                             </div>
                             <div>
                                 <label>Telefone (residêncial):</label>
-                                <p>{{dataUser.telephone}}</p>
+                                <p>{{dataUser.telephone| mask: '(00) 0000-0000'}}</p>
                             </div>
                             <div>
                                 <label>E-mail:</label>
@@ -75,15 +75,15 @@
                         <div data-columns="4">
                             <div>
                                 <label>CPF:</label>
-                                <p>{{dataUser.telephone}}</p>
+                                <p>{{dataUser.cpf| mask: '000.000.000-00'}}</p>
                             </div>
                             <div>
                                 <label>RG:</label>
-                                <p>{{dataUser.telephone}}</p>
+                                <p>{{dataUser.rg| mask: '00.000.000-00'}}</p>
                             </div>
                             <div>
                                 <label>Data de nascimento:</label>
-                                <span>{{dataUser.birthDate}}</span>
+                                <span>{{viewBirthDate}}</span>
                             </div>
                             <div>
                                 <label>Senha:</label>
@@ -102,7 +102,7 @@
                             </div>
                             <div>
                                 <label>CEP:</label>
-                                <p>{{dataUser.cep}}</p>
+                                <p>{{dataUser.cep| mask: '00000-000'}}</p>
                             </div>
                             <div>
                                 <label>Cidade & Estado:</label>

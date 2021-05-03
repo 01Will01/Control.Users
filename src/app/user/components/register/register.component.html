@@ -33,13 +33,13 @@
                                         <div class="step">
                                             <mat-label>Name</mat-label>
                                             <input matInput placeholder="Ex. Primeiro nomes" formControlName="Name" value="Nome teste" required>
-                                            <span class="required" *ngIf="!formInput.controls.Name.valid && formInput.controls.Name.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.Name.valid && formInput.controls.Name.touched">☢ Campo Obrigatório</span>
 
                                         </div>
                                         <div class="step">
                                             <mat-label>Sobrenome</mat-label>
                                             <input matInput placeholder="Ex. Sobrenome" formControlName="Lastname" required>
-                                            <span class="required" *ngIf="!formInput.controls.Lastname.valid && formInput.controls.Lastname.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.Lastname.valid && formInput.controls.Lastname.touched">☢ Campo Obrigatório</span>
 
                                         </div>
                                     </div>
@@ -55,13 +55,13 @@
                                         <div class="step">
                                             <mat-label>CPF</mat-label>
                                             <input type="text" mask="000.000.000-00" matInput placeholder="Ex. 000.000.000-00" formControlName="CPF" required>
-                                            <span class="required" *ngIf="!formInput.controls.CPF.valid && formInput.controls.CPF.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.CPF.valid && formInput.controls.CPF.touched">☢ Campo Obrigatório</span>
 
                                         </div>
                                         <div class="step">
                                             <mat-label>RG</mat-label>
                                             <input type="text" mask="00.000.000-00" matInput placeholder="Ex. 00.000.000-0" formControlName="RG" required>
-                                            <span class="required" *ngIf="!formInput.controls.RG.valid && formInput.controls.RG.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.RG.valid && formInput.controls.RG.touched">☢ Campo Obrigatório</span>
                                         </div>
 
                                         <div class="step">
@@ -70,12 +70,12 @@
                                             <input type="hidden" matInput [matDatepicker]="dp" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
                                             <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
                                             <mat-datepicker #dp></mat-datepicker>
-                                            <span class="required" *ngIf="!formInput.controls.BirthDate.valid">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.BirthDate.valid">☢ Campo Obrigatório</span>
                                         </div>
                                         <div class="step">
                                             <mat-label>Senha</mat-label>
                                             <input type="password" matInput placeholder="Ex. ******" formControlName="Password" required>
-                                            <span class="required" *ngIf="!formInput.controls.Password.valid && formInput.controls.Password.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.Password.valid && formInput.controls.Password.touched">☢ Campo Obrigatório</span>
                                         </div>
                                     </div>
                                     <div>
@@ -89,18 +89,18 @@
                                         <div class="step">
                                             <mat-label>Número de telefone móvel</mat-label>
                                             <input type="text" prefix="+55" mask="(00) 00000-0000" matInput placeholder="Ex. +55 (00) 99999-9999" formControlName="Phone" required>
-                                            <span class="required" *ngIf="!formInput.controls.Phone.valid && formInput.controls.Phone.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.Phone.valid && formInput.controls.Phone.touched">☢ Campo Obrigatório</span>
                                         </div>
                                         <div class="step">
                                             <mat-label>Número de telefone residencial</mat-label>
                                             <input type="text" prefix="+55" mask="(00) 0000-0000" matInput placeholder="Ex. +55 (00) 9999-9999" formControlName="Telephone" required>
-                                            <span class="required" *ngIf="!formInput.controls.Telephone.valid && formInput.controls.Telephone.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.Telephone.valid && formInput.controls.Telephone.touched">☢ Campo Obrigatório</span>
                                         </div>
 
                                         <div class="step">
                                             <mat-label>E-mail</mat-label>
                                             <input type="text" matInput placeholder="Ex. Nome@Dominio.com.br" formControlName="Email" required>
-                                            <span class="required" *ngIf="!formInput.controls.Email.valid && formInput.controls.Email.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.Email.valid && formInput.controls.Email.touched">☢ Campo Obrigatório</span>
                                         </div>
                                     </div>
                                     <div>
@@ -114,41 +114,41 @@
                                         <div class="step">
                                             <mat-label>Nome da rua</mat-label>
                                             <input matInput placeholder="Ex. Rua nome..." formControlName="Address" required>
-                                            <span class="required" *ngIf="!formInput.controls.Address.valid && formInput.controls.Address.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.Address.valid && formInput.controls.Address.touched">☢ Campo Obrigatório</span>
                                         </div>
                                         <div class="step">
                                             <mat-label>Número do logradouro</mat-label>
                                             <input type="number" maxlength="4" min="0" max="9999" matInput placeholder="Ex. 1045" formControlName="Number" required>
-                                            <span class="required" *ngIf="!formInput.controls.Number.valid && formInput.controls.Number.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.Number.valid && formInput.controls.Number.touched">☢ Campo Obrigatório</span>
                                         </div>
 
                                         <div class="step">
                                             <mat-label>Complemento</mat-label>
                                             <input matInput placeholder="Ex. Apto 120" formControlName="Complement" required>
-                                            <span class="required" *ngIf="!formInput.controls.Complement.valid && formInput.controls.Complement.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.Complement.valid && formInput.controls.Complement.touched">☢ Campo Obrigatório</span>
                                         </div>
 
 
                                         <div class="step">
                                             <mat-label>CEP</mat-label>
                                             <input type="text" mask="00000-000" matInput placeholder="Ex. 00000-000" formControlName="CEP" required>
-                                            <span class="required" *ngIf="!formInput.controls.CEP.valid && formInput.controls.CEP.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.CEP.valid && formInput.controls.CEP.touched">☢ Campo Obrigatório</span>
                                         </div>
                                         <div class="step">
                                             <mat-label>Bairro</mat-label>
                                             <input matInput placeholder="Ex. Nome" formControlName="District" required>
-                                            <span class="required" *ngIf="!formInput.controls.District.valid && formInput.controls.District.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.District.valid && formInput.controls.District.touched">☢ Campo Obrigatório</span>
                                         </div>
                                         <div class="step">
                                             <mat-label>Cidade</mat-label>
                                             <input matInput placeholder="Ex. Nome" formControlName="City" required>
-                                            <span class="required" *ngIf="!formInput.controls.City.valid && formInput.controls.City.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.City.valid && formInput.controls.City.touched">☢ Campo Obrigatório</span>
                                         </div>
 
                                         <div class="step">
                                             <mat-label>Estado</mat-label>
                                             <input matInput placeholder="Ex. Nome" formControlName="UF" required>
-                                            <span class="required" *ngIf="!formInput.controls.UF.valid && formInput.controls.UF.touched">Campo Obrigatório</span>
+                                            <span class="required" *ngIf="!formInput.controls.UF.valid && formInput.controls.UF.touched">☢ Campo Obrigatório</span>
                                         </div>
                                     </div>
 
